@@ -1,9 +1,22 @@
-let ArticleMeta= {
-  bindings: {
-    article: '='
-  },
-  transclude: true,
-  templateUrl: 'components/article-helpers/article-meta.html'
-};
+import { Component, OnInit } from '@angular/core';
 
-export default ArticleMeta;
+@Component({
+  selector: 'article-meta',
+  templateUrl: './article-meta.html'
+})
+
+export class ArticleMetaComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit() { }
+}
+
+// let ArticleMeta= {
+//   bindings: {
+//     article: '='
+//   },
+//   transclude: true,
+//   templateUrl: 'components/article-helpers/article-meta.html'
+// };
+
+// export default ArticleMeta;

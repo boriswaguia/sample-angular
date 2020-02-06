@@ -1,6 +1,6 @@
 <div class="article-meta">
   <a ui-sref="app.profile.main({ username:$ctrl.article.author.username })">
-    <img ng-src="{{$ctrl.article.author.image}}" />
+    <img [src]="$ctrl.article.author.image" />
   </a>
 
   <div class="info">
@@ -13,5 +13,6 @@
     </span>
   </div>
 
-  <ng-transclude></ng-transclude>
+  <!-- <ng-transclude></ng-transclude> -->
+  <ng-content></ng-content>
 </div>

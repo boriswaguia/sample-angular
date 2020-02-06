@@ -3,5 +3,7 @@
               'btn-outline-primary': !$ctrl.article.favorited,
               'btn-primary': $ctrl.article.favorited }"
   ng-click="$ctrl.submit()">
-  <i class="ion-heart"></i> <ng-transclude></ng-transclude>
+  <i class="ion-heart"></i>
+  <!-- <ng-transclude></ng-transclude> -->
+  <ng-content></ng-content>
 </button>

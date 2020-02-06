@@ -1,14 +1,22 @@
-class ArticleListCtrl {
-  static $inject = ['Articles', '$scope'];
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-article-list',
+  templateUrl: './article-list.html'
+})
+export class ArticleListComponent {
+  // static $inject = ['Articles', '$scope'];
   _Articles: any;
   listConfig: any;
   list: any[];
   loading: boolean;
   limit: any;
-  constructor(Articles, $scope) {
-    'ngInject';
+  // constructor(Articles, $scope) {
+  constructor(Articles) {
+    // 'ngInject';
 
     this._Articles = Articles;
+    const $scope: any = {};
 
     this.setListTo(this.listConfig);
 
@@ -79,13 +87,13 @@ class ArticleListCtrl {
 
 }
 
-let ArticleList = {
-  bindings: {
-    limit: '=',
-    listConfig: '='
-  },
-  controller: ArticleListCtrl,
-  templateUrl: 'components/article-helpers/article-list.html'
-};
+// let ArticleList = {
+//   bindings: {
+//     limit: '=',
+//     listConfig: '='
+//   },
+//   controller: ArticleListComponent,
+//   templateUrl: 'components/article-helpers/article-list.html'
+// };
 
-export default ArticleList;
+// export default ArticleList;

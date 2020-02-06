@@ -1,12 +1,22 @@
-class ListPaginationCtrl {
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'list-pagination',
+  templateUrl: './list-pagination.html'
+})
+export class ListPaginationComponent implements OnInit {
   static $inject = ['$scope'];
   _$scope: any;
-  constructor($scope) {
+  constructor() {
     'ngInject';
+
+    let $scope: any = {};
 
     this._$scope = $scope;
 
   }
+
+  ngOnInit() {}
 
   pageRange(total) {
     let pages = [];
@@ -22,16 +32,42 @@ class ListPaginationCtrl {
     this._$scope.$emit('setPageTo', number);
   }
 
-
 }
 
-let ListPagination= {
-  bindings: {
-    totalPages: '=',
-    currentPage: '='
-  },
-  controller: ListPaginationCtrl,
-  templateUrl: 'components/article-helpers/list-pagination.html'
-};
+// class ListPaginationCtrl {
+//   static $inject = ['$scope'];
+//   _$scope: any;
+//   constructor($scope) {
+//     'ngInject';
 
-export default ListPagination;
+//     this._$scope = $scope;
+
+//   }
+
+//   pageRange(total) {
+//     let pages = [];
+
+//     for (var i = 0; i < total; i++) {
+//       pages.push(i + 1)
+//     }
+
+//     return pages;
+//   }
+
+//   changePage(number) {
+//     this._$scope.$emit('setPageTo', number);
+//   }
+
+
+// }
+
+// let ListPagination= {
+//   bindings: {
+//     totalPages: '=',
+//     currentPage: '='
+//   },
+//   controller: ListPaginationCtrl,
+//   templateUrl: 'components/article-helpers/list-pagination.html'
+// };
+
+// export default ListPagination;
